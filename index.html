@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Eyes</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      position: relative;
+      width: 100px;
+      height: 50px;
+    }
+
+    .eye {
+      width: 20px;
+      height: 20px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+      transition: transform 0.1s;
+    }
+
+    .eye.left {
+      left: 0;
+    }
+
+    .eye.right {
+      right: 0;
+    }
+
+    .blink {
+      transform: scaleY(0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+  </div>
+
+  <script>
+    const eyes = document.querySelectorAll('.eye');
+
+    document.addEventListener("mousemove", (e) => {
+      eyes.forEach(eye => {
+        const rect = eye.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+        const radius = 4;
+        eye.style.transform = `translate(${Math.cos(angle)*radius}px, ${Math.sin(angle)*radius}px)`;
+      });
+    });
+
+    function startBlinking() {
+      setInterval(() => {
+        if (Math.random() < 0.1) {
+          eyes.forEach(eye => eye.classList.add('blink'));
+          setTimeout(() => {
+            eyes.forEach(eye => eye.classList.remove('blink'));
+          }, 150);
+        }
+      }, 1000);
+    }
+
+    startBlinking();
+  </script>
+</body>
+</html>
