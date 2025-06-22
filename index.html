@@ -110,31 +110,33 @@
       </div>
 
   <script>
-    const eyes = document.querySelectorAll('.eye');
+    document.addEventListener('DOMContentLoaded', function() {
+      const eyes = document.querySelectorAll('.eye');
 
-    document.addEventListener("mousemove", (e) => {
-      eyes.forEach(eye => {
-        const rect = eye.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
-        const radius = 4;
-        eye.style.transform = `translate(${Math.cos(angle)*radius}px, ${Math.sin(angle)*radius}px)`;
+      document.addEventListener("mousemove", (e) => {
+        eyes.forEach(eye => {
+          const rect = eye.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+          const radius = 4;
+          eye.style.transform = `translate(${Math.cos(angle)*radius}px, ${Math.sin(angle)*radius}px)`;
+        });
       });
+
+      function startBlinking() {
+        setInterval(() => {
+          if (Math.random() < 0.1) {
+            eyes.forEach(eye => eye.classList.add('blink'));
+            setTimeout(() => {
+              eyes.forEach(eye => eye.classList.remove('blink'));
+            }, 150);
+          }
+        }, 1000);
+      }
+
+      startBlinking();
     });
-
-    function startBlinking() {
-      setInterval(() => {
-        if (Math.random() < 0.1) {
-          eyes.forEach(eye => eye.classList.add('blink'));
-          setTimeout(() => {
-            eyes.forEach(eye => eye.classList.remove('blink'));
-          }, 150);
-        }
-      }, 1000);
-    }
-
-    startBlinking();
   </script>
 </body>
 </html>
