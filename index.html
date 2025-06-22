@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Animated Eyes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <style>
     body {
       background: #f0f0f0;
@@ -11,17 +14,43 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      font-family: "Figtree", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    .card {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      background: white;
+      border: none;
+      border-radius: 24px;
+      padding: 24px 36px;
+      width: 400px;
+    }
+
+    .label {
+      margin-right: 16px;
+      font-size: 4em;
+      letter-spacing: -0.04em;
+    }
+
+    .tagline {
+      margin-right: 16px;
+      font-size: 1.6em;
+      letter-spacing: -0.02em;
     }
 
     .container {
       position: relative;
-      width: 100px;
-      height: 50px;
+      width: 30px;
+      height: 3em;
     }
 
     .eye {
-      width: 20px;
-      height: 20px;
+      width: 10px;
+      height: 10px;
       background: black;
       border-radius: 50%;
       position: absolute;
@@ -40,13 +69,45 @@
     .blink {
       transform: scaleY(0.1);
     }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: .5em;
+    }
+
+    .thin-line {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      margin: 1.5em 0;
+      height: 0;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="eye left"></div>
-    <div class="eye right"></div>
-  </div>
+  <div class="card">
+    <div class="row">
+        <span class="label">deeteeo</span>
+        <div class="container">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="tagline">creative solutions for your business</div>
+    </div>
+    <hr class="thin-line">
+    <div class="row">
+      <div>info@deeteeo.be</div>
+    </div>
+    <div class="row">
+      <div>+32(0)477 72 56 52</div>
+    </div>
+    <div class="row">
+      <div>BE 1015.438.659</div>
+    </div>
+      </div>
 
   <script>
     const eyes = document.querySelectorAll('.eye');
