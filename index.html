@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #f0f0f0;
+      background: #fafafa;
       height: 100vh;
       margin: 0;
       display: flex;
@@ -22,7 +22,7 @@
     }
 
     .card {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.10);
       background: white;
       border: none;
       border-radius: 24px;
@@ -44,8 +44,8 @@
 
     .container {
       position: relative;
-      width: 30px;
-      height: 3em;
+      width: 2.2em;
+      height: 2.7em;
     }
 
     .eye {
@@ -67,7 +67,7 @@
     }
 
     .blink {
-      transform: scaleY(0.1);
+      transform: scaleY(0.3);
     }
 
     .row {
@@ -110,33 +110,41 @@
       </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const eyes = document.querySelectorAll('.eye');
+document.addEventListener('DOMContentLoaded', function() {
+  const eyes = document.querySelectorAll('.eye');
 
-      document.addEventListener("mousemove", (e) => {
-        eyes.forEach(eye => {
-          const rect = eye.getBoundingClientRect();
-          const centerX = rect.left + rect.width / 2;
-          const centerY = rect.top + rect.height / 2;
-          const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
-          const radius = 4;
-          eye.style.transform = `translate(${Math.cos(angle)*radius}px, ${Math.sin(angle)*radius}px)`;
-        });
-      });
-
-      function startBlinking() {
-        setInterval(() => {
-          if (Math.random() < 0.1) {
-            eyes.forEach(eye => eye.classList.add('blink'));
-            setTimeout(() => {
-              eyes.forEach(eye => eye.classList.remove('blink'));
-            }, 150);
-          }
-        }, 1000);
-      }
-
-      startBlinking();
+  document.addEventListener("mousemove", (e) => {
+    eyes.forEach(eye => {
+      const rect = eye.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+      const radius = 4;
+      eye.style.transform = `translate(${Math.cos(angle)*radius}px, ${Math.sin(angle)*radius}px)`;
     });
+  });
+
+  function blink() {
+    eyes.forEach(eye => eye.classList.add('blink'));
+    setTimeout(() => {
+      eyes.forEach(eye => eye.classList.remove('blink'));
+      scheduleBlink();
+    }, 150);
+  }
+
+  function scheduleBlink() {Ò
+    // Random interval between 1.5s and 4s
+    const nextBlink = 1500 + Math.random() * 2500;
+    setTimeout(blink, nextBlink);
+  }
+
+  // Blink on click as well
+  document.addEventListener('click', () => {
+    blink();
+  });
+
+  scheduleBlink();
+});
   </script>
 </body>
 </html>
