@@ -181,6 +181,8 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     .row {
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       margin-bottom: .5em;
     }
 
@@ -200,6 +202,36 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     a:hover {
       text-decoration: underline;
       color: inherit;
+    }
+
+    .iubenda-links {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      // background: rgba(255,255,255,0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+      padding: 0.5em 0;
+      z-index: 9999;
+      font-size: 1em;
+      // box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    }
+    .iubenda-links a {
+      color: #333;
+      text-decoration: underline;
+      font: inherit;
+      white-space: nowrap;
+    }
+    @media (max-width: 600px) {
+      .iubenda-links {
+        gap: 1em;
+        font-size: 0.95em;
+        padding: 0.7em 0.2em;
+      }
     }
   </style>  
 </head>
@@ -298,7 +330,11 @@ document.addEventListener('DOMContentLoaded', function() {
     gtag('config', 'G-TB2SD6ZFQ7');
   </script>
 
-  <a href="https://www.iubenda.com/privacy-policy/31136082" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-  <a href="https://www.iubenda.com/privacy-policy/31136082/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+  <div class="iubenda-links">
+    <a href="https://www.iubenda.com/privacy-policy/31136082" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a>
+    <a href="https://www.iubenda.com/privacy-policy/31136082/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a>
+  </div>
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 </body>
 </html>
