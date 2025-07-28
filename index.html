@@ -6,10 +6,10 @@
   <!-- End Google Tag Manager -->
 
   <!-- iubenda consent mananger -->
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
   var _iub = _iub || [];
   _iub.csConfiguration = {"siteId":4176926,"cookiePolicyId":31136082,"lang":"en","storage":{"useSiteId":true}};
-  </script>
+  </script> -->
   <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4176926.js"></script>
   <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
   <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
@@ -150,33 +150,6 @@ silktideCookieBannerManager.updateCookieBannerConfig({
       letter-spacing: -0.02em;
     }
 
-    .eyes {
-      position: relative;
-      width: 2em;
-      height: 1em;
-    }
-
-    .eye {
-      width: 9px;
-      height: 9px;
-      background: black;
-      border-radius: 50%;
-      position: absolute;
-      top: .5em;
-      transition: transform 0.075s;
-    }
-
-    .eye.left {
-      left: 0;
-    }
-
-    .eye.right {
-      right: 0;
-    }
-
-    .blink {
-      transform: scaleY(0.2);
-    }
 
     .row {
       display: flex;
@@ -243,9 +216,9 @@ silktideCookieBannerManager.updateCookieBannerConfig({
   <div class="card">
     <div class="row">
         <span class="label">deeteeo</span>
-        <div class="eyes">
-            <div class="eye left"></div>
-            <div class="eye right"></div>
+        <div class="deeteeo-eyes">
+            <div class="deeteeo-eye left"></div>
+            <div class="deeteeo-eye right"></div>
         </div>
     </div>
     <div class="row">
@@ -257,7 +230,8 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     </div>
       </div>
 
-  <script>
+  <script lang="javascript">
+
 document.addEventListener('DOMContentLoaded', function() {
   const eyes = document.querySelectorAll('.eye');
   // Store translation and blink state for each eye
@@ -318,22 +292,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   scheduleNextBlink();
 });
+
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB2SD6ZFQ7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TB2SD6ZFQ7');
-  </script> -->
-
-  <div class="iubenda-links">
+  <!-- <div class="iubenda-links">
     <a href="https://www.iubenda.com/privacy-policy/31136082" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe" title="Privacy Policy ">Privacy Policy</a>
     <a href="https://www.iubenda.com/privacy-policy/31136082/cookie-policy" class="iiubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe" title="Cookie Policy ">Cookie Policy</a>
     <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-  </div>
+  </div> -->
 </body>
 </html>
