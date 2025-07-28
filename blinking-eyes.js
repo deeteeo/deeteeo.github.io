@@ -56,5 +56,5 @@ document.addEventListener('DOMContentLoaded', function() {
     resetTimeout = setTimeout(resetEyes, resetDelay);
   });
 
-  scheduleNextBlink();
+  blink();
 });
