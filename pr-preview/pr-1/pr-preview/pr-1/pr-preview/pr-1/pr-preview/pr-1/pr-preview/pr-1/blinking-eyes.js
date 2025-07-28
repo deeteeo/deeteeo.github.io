@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const eyes = document.querySelectorAll('.deeteeo.eye');
+  const eyes = document.querySelectorAll('.eye');
   // Store translation and blink state for each eye
   const eyeStates = Array.from(eyes).map(() => ({ x: 0, y: 0, blinking: false }));
 
@@ -56,5 +56,5 @@ document.addEventListener('DOMContentLoaded', function() {
     resetTimeout = setTimeout(resetEyes, resetDelay);
   });
 
-  blink();
+  scheduleNextBlink();
 });

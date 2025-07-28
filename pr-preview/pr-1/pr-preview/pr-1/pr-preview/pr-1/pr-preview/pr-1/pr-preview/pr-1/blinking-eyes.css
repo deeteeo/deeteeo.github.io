@@ -1,9 +1,9 @@
-.deeteeo-eyes {
+.eyes {
   position: relative;
   width: 2em;
   height: 1em;
 }
-.deeteeo-eye {
+.eye {
   width: 9px;
   height: 9px;
   background: black;
@@ -12,10 +12,10 @@
   top: .5em;
   transition: transform 0.075s;
 }
-.deeteeo-eye.left {
+.eye.left {
   left: 0;
 }
-.deeteeo-eye.right {
+.eye.right {
   right: 0;
 }
 .blink {
