@@ -1,3 +1,3 @@
 # deeteeo.github.io
 
-This is deeteeo's public profile page
+This is deeteeo's public website
