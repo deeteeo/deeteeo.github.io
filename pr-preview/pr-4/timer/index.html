@@ -279,7 +279,7 @@
     <script>
         class Timer {
             constructor() {
-                this.id = Date.now() + Math.random();
+                this.id = crypto.randomUUID();
                 this.timeLeft = 30;
                 this.isRunning = false;
                 this.interval = null;
